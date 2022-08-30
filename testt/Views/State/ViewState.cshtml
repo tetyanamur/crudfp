@@ -1,0 +1,35 @@
+﻿@model State
+
+<h3>@Model.name Information</h3>
+
+<table class="table">
+    <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>code</th>
+        <th>region</th>
+
+
+    </tr>
+    <tr>
+        <td>@Model.id</td>
+        <td>@Model.name</td>
+        <td>@Model.code</td>
+        <td>@Model.region</td>
+
+
+    </tr>
+
+</table>
+
+<div style="display: block">
+    <a href="/State/UpdateState/@Model.id">Update this State</a>
+</div>
+
+<div style="display: block">
+    @using (Html.BeginForm("DeleteState", "state", "Post"))
+    {
+        <input type="hidden" asp-for="id" value="@Model.id" />
+        <input type="submit" onclick="return confirm('Are you sure?')" value="Delete this state" />
+    }
+</div>

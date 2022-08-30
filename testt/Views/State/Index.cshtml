@@ -1,0 +1,31 @@
+﻿model IEnumerable<State>
+
+    <h2>States</h2>
+
+    <div style="display: block">
+        <a href="/State/InsertState/">Create a New State</a>
+    </div>
+
+    <table class="table">
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>code</th>
+            <th>region</th>
+
+
+        </tr>
+
+        @foreach (var area in Model)
+        {
+            <tr>
+                <td><a href=/State/ViewState/@area.id>@area.id</a></td>
+                <td>@area.name</td>
+                <td>@area.code</td>
+                <td>@area.region</td>
+
+
+            </tr>
+
+        }
+    </table>
